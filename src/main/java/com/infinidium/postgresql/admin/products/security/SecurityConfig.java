@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .passwordEncoder(encoder)
                 .withUser(SECURE_KEY_USERNAME)
                 .password(encoder.encode(SECURE_KEY_PASSWORD))
-                .roles("USER");
+                .roles("ADMIN");
     }
 
     @Override
