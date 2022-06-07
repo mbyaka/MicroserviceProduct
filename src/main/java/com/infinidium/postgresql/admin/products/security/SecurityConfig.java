@@ -22,12 +22,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception
     {
-        PasswordEncoder encoder = new BCryptPasswordEncoder();
+        //PasswordEncoder encoder = new BCryptPasswordEncoder();
 
         auth.inMemoryAuthentication()
-                .passwordEncoder(encoder)
                 .withUser(SECURE_KEY_USERNAME)
-                .password(encoder.encode(SECURE_KEY_PASSWORD))
+                .password(SECURE_KEY_PASSWORD)
                 .roles("USER");
     }
 
