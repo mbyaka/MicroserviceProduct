@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         auth.inMemoryAuthentication()
                 .passwordEncoder(encoder)
                 .withUser(SECURE_KEY_USERNAME)
-                .password(SECURE_KEY_PASSWORD)
+                .password(encoder.encode(SECURE_KEY_PASSWORD))
                 .roles("USER");
     }
 
